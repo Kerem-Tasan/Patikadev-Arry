@@ -33,6 +33,9 @@ public class tekraredensayi {
             if(value!=0 && value%2==0){
                 System.out.println(value);
             }
+              else {
+                System.out.println(Arrays.toString(list)+" dizide tekrar eden çift sayı yoktur");
+            }
         }
 
 
