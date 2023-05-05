@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class dizisiralama {
     public static void main(String[] args) {
+         int indexStart=0;
         Scanner input=new Scanner(System.in);
         System.out.print("Dizinin boyutu\t:");
         int i=input.nextInt();
@@ -11,6 +12,8 @@ public class dizisiralama {
             list[j]=input.nextInt();
         }
         Arrays.sort(list);
-        System.out.println(Arrays.toString(list));
+       for(int a:list){
+            System.out.println("Dizinin "+ a +". elemanı :"+list[indexStart++]);
+        }
     }
 }
