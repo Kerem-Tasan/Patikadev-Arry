@@ -3,16 +3,7 @@ import java.util.Arrays;
 
 public class kactekrar {
 
-    static boolean isFind(int arr[], int value) {
-        for (int i : arr) {
-
-            if (i == value) {
-
-                return true;
-            }
-        }
-        return false;
-    }
+    
 
     public static void main(String[] args) {
         int[] list = {3, 5, 6, 8, 12, 5, 123, 12, 5, 12, 12, 65432, 21, 65432};
