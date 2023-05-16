@@ -1,0 +1,64 @@
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main1 {
+    public static void main(String[] args) {
+        Scanner src = new Scanner(System.in);
+        Random rand = new Random();
+        int number = rand.nextInt(100);
+        int sayac = 0;
+        System.out.println(number);
+        boolean isWin=false;
+        boolean isWrong=false;
+        int[] wrong=new int[5];
+        while (sayac < 5) {
+            System.out.print("Sayıyı tahmin edin:");
+            int guess = src.nextInt();
+
+            if(guess<0||guess>100){
+                System.out.println("Sayı 0-100 arasındadır.Lütfen geçerli bir sayı girin!");
+                if(isWrong){
+                    sayac++;
+                    System.out.println("Hatalı giriş sayınız :"+(5-sayac));
+                    System.out.println("Hata sayınız biterse kaybedersiniz!");
+                }
+                else{
+                    isWrong=true;
+                    System.out.println("Bir daha hatalı girişiniz de hakkınız bir eksilecektir!!");
+
+                }
+                continue;
+            }
+
+            if (guess == number) {
+                System.out.println("Tahmininiz doğru!");
+                  isWin=true;
+                break;
+            }
+            else{
+
+                System.out.println("Hatalı sayı girişi!");
+                if(guess>number){
+                    System.out.println("Girilen sayı istenen sayıdan büyüktür");
+                }
+                else {
+                    System.out.println("Girilen sayı istenen sayıdan küçüktür");
+                }
+                wrong[sayac++]=guess;
+                System.out.println("Kalan hakkınız: "+(5-sayac));
+            }
+
+
+        }
+
+        if(!isWin){
+            System.out.println("Kaybettiniz!");
+            if(!isWrong){
+                System.out.println("Hatalı tahminleriniz:"+Arrays.toString(wrong));
+            }
+        }
+
+
+    }
+}
